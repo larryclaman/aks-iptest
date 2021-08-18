@@ -40,7 +40,7 @@ envsubst < aks-helloworld.yaml |kubectl apply -f -
 # Deploy 'root' version of app
 export version="root"
 envsubst < aks-helloworld.yaml |kubectl apply -f -
-# kubectl port-forward svc/aks-helloworld-green 8001:80
+# kubectl port-forward svc/aks-helloworld-root 8002:80
 
 
 ##############
@@ -49,7 +49,7 @@ kubectl apply -f hello-ingress.yaml
 kubectl get ingress
 kubectl describe ingress hello-world-ingress
 
-# get the ip address of the LB
+# get the ip address of the LB  (it's the full output, not just the ip)
 DYNIP=$(kubectl get svc -n ingress-basic)
 echo $DYNIP
 
