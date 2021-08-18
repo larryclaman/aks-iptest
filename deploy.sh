@@ -83,5 +83,5 @@ helm install nginx-ingress ingress-nginx/ingress-nginx \
     --set defaultBackend.nodeSelector."kubernetes\.io/os"=linux \
     --set controller.service.loadBalancerIP=$PUBLICIP
 
-# now, check the public IP:
+# now, check the public IP -- this should be the static IP that was set.
 kubectl get svc -n ingress-basic
